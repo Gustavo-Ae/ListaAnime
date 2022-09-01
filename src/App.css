@@ -1,3 +1,21 @@
 .App {
   text-align: center;
 }
+
+.animes-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto)); /* auto-fit : pode repetir quantas colunas couber*/
+  max-width: 800px;
+  margin: 40px auto;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.animes-list li:hover{
+  transition: all 0.6s ease;
+  transform: scale(1.1);
+}
+
+.animes-list img{
+  width: 100%;
+}

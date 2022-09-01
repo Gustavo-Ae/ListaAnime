@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
 
     if(text){
-      fetch(`${api}/anime?filter[text]=${text}`)
+      fetch(`${api}/anime?filter[text]=${text}&page[limit]=9`)
         .then((resposta) => resposta.json())
         .then((resposta) => {
           setInfo(resposta)
@@ -34,9 +34,10 @@ function App() {
       />
 
       {info.data && (
-        <ul>
+        <ul className='animes-list'>
             {info.data.map((anime) => (
                 <li key={anime.id}>
+                  <img src={anime.attributes.posterImage.small}  alt={anime.attributes.canonicalTitle}/>
                   {anime.attributes.canonicalTitle}
                 </li>
             ))}
