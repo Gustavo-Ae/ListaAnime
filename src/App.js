@@ -5,7 +5,7 @@ import SearchInput from './components/SearchInput/SearchInput';
 function App() {
   const [text, setText] = useState("");
   
-  console.log(text)
+  // console.log(text)
 
   const [info, setInfo] = useState({});
 
@@ -14,6 +14,7 @@ function App() {
   useEffect(() => {
 
     if(text){
+      console.log(text)
       fetch(`${api}/anime?filter[text]=${text}&page[limit]=9`)
         .then((resposta) => resposta.json())
         .then((resposta) => {
